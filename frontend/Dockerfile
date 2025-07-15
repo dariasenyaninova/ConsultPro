@@ -5,6 +5,6 @@ COPY . .
 RUN npm install && npm run build
 
 # Production stage
-FROM nginx:alpine
-COPY --from=build /app/dist /etc/nginx/html
+FROM httpd:alpine
+COPY --from=build /app/dist/ /usr/local/apache2/htdocs/
 EXPOSE 80
