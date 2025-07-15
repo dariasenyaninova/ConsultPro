@@ -1,0 +1,70 @@
+version: "3.1"
+nlu:
+  - intent: greet
+    examples: |
+      - hello
+      - hi
+      - good afternoon
+      - good morning
+      - hey
+      - greetings
+
+  - intent: specify_department
+    examples: |
+      - I need someone for the [IT](department) department
+      - Looking for a person in [Accounting](department)
+      - We need a candidate for [Sales](department)
+      - Searching for an employee in [Human Resources](department)
+      - Looking for someone in [HR](department)
+      - I need a worker in [Logistics](department)
+      - Looking for a [Finance](department) specialist
+      - We are hiring in [Marketing](department)
+      - I need a developer for [Development](department)
+      - Need someone for [Technical support](department)
+      - We need a lawyer for the [Legal](department) department
+
+  - intent: specify_wage
+    examples: |
+      - salary [1000 euros](wage)
+      - salary up to [1500 euros](wage)
+      - maximum wage [2000 euros](wage)
+      - starting from [1200 euros](wage)
+      - about [1800 euros](wage)
+      - salary range [2500 euros](wage)
+      - willing to offer [3000 euros](wage)
+      - up to [50000 rubles](wage)
+      - [100000 rubles](wage) max
+      - [3500 USD](wage) per month
+
+  - intent: specify_experience
+    examples: |
+      - at least [3 years](experience) of experience
+      - at least [3](experience) of experience
+      - [5](experience)
+      - [3](experience)
+      - [2](experience)
+      - minimum [2 years](experience) experience required
+      - should have [5 years](experience) of experience
+      - at least [1 year](experience)
+      - at least [1](experience)
+      - about [7 years](experience)
+      - about [7](experience)
+      - more than [10 years](experience) preferred
+      - more than [10](experience) preferred
+      - no experience required
+      - entry level is acceptable
+      - looking for [mid-level](experience) specialist
+      - must be [senior level](experience)
+
+  - intent: specify_profession
+    examples: |
+      - we need a [software engineer](profession)
+      - looking for an [accountant](profession)
+      - hiring a [sales manager](profession)
+      - searching for an [HR specialist](profession)
+      - need a [logistics coordinator](profession)
+      - seeking a [marketing specialist](profession)
+      - looking for a [developer](profession)
+      - searching for a [lawyer](profession)
+      - need a [customer support agent](profession)
+      - hiring a [QA tester](profession)

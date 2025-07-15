@@ -1,0 +1,61 @@
+version: "3.1"
+
+intents:
+  - greet
+  - specify_department
+  - specify_wage
+  - specify_experience
+
+entities:
+  - department
+  - wage
+  - experience
+
+slots:
+  department:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: department
+  wage:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: wage
+  experience:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: experience
+
+forms:
+  staff_search_form:
+    required_slots:
+      - department
+      - wage
+      - experience
+
+responses:
+  utter_greet:
+    - text: "Hello! I can help you find the right candidate. Let's get started."
+
+  utter_ask_department:
+    - text: "Which department are you looking for a candidate in?"
+
+  utter_ask_wage:
+    - text: "What is the salary or wage range you can offer?"
+
+  utter_ask_experience:
+    - text: "How many years of experience should the candidate have?"
+
+  utter_submit:
+    - text: "Thank you! Let me search for candidates matching your criteria..."
+
+  utter_goodbye:
+    - text: "Thank you for using our recruitment bot!"
+
+actions:
+  - action_submit_staff_search

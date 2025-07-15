@@ -1,0 +1,14 @@
+:root {
+    --primary-color: #2f2fa2;
+    --accent-color: #ff4c7c;
+    --font-main: 'Montserrat', sans-serif;
+    --text-color: #333;
+    --bg-light: #f5f5f5;
+
+
+    --font-xxl: 36px;
+    --font-xl: 32px;
+    --font-lg: 24px;
+    --font-md: 22px;
+    --font-sm: 18px;
+}

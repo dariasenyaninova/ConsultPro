@@ -1,0 +1,24 @@
+version: "3.1"
+rules:
+  - rule: Activate staff search form
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: staff_search_form
+      - active_loop: staff_search_form
+
+  - rule: Submit form and search
+    condition:
+      - active_loop: staff_search_form
+    steps:
+      - action: staff_search_form
+      - active_loop: null
+      - slot_was_set:
+          - department
+      - slot_was_set:
+          - wage
+      - slot_was_set:
+          - experience
+      - action: utter_submit
+      - action: action_submit_staff_search
+      - action: utter_goodbye

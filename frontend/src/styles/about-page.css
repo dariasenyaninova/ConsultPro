@@ -1,0 +1,27 @@
+.about-container {
+    width: 100vw;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.about-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #1b1464;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-paragraph {
+    font-size: 1.25rem;
+    color: #222;
+    line-height: 1.8;
+    max-width: 1000px;
+    margin: 0 auto 1.5rem auto;
+    text-indent: 2rem;
+    text-align: left;
+}
+
+.highlight {
+    color: #ff4c7c;
+    font-weight: 600;
+}

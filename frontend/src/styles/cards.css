@@ -1,0 +1,88 @@
+.card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #cfcfcf;
+}
+
+.card-scroll {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.specialist-card {
+    width: 12rem;
+    min-width: 12rem;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.specialist-card:hover {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+.profile-card,
+.specialist-card-full {
+    background: white;
+    border: 1px solid #cfcfcf;
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    width: 500px;              /* 🔹 Фиксированная ширина */
+    margin-left: auto;         /* 🔹 Центрирование */
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card-name {
+    font-weight: 600;
+    font-size: 1.125rem;
+    margin-top: 0.5rem;
+}
+
+.card-experience {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.card-rate {
+    color: #22c55e;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.card-image {
+    width: 6rem;
+    height: 6rem;
+    background-color: #e0e0e0;
+    border-radius: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+

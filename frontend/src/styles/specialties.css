@@ -1,0 +1,10 @@
+.specialist-section {
+    width: 800px;
+    margin-left: 200px;
+    margin-right: auto;
+}
+.specialist-section h2 {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}

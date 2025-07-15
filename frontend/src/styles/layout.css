@@ -1,0 +1,30 @@
+.space-top {
+    padding-top: 80px;
+}
+
+.space-bottom {
+    padding-bottom: 5rem;
+}
+
+.body {
+    padding: 5rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.text-block-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+    justify-items: stretch;
+}

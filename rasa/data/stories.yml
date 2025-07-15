@@ -1,0 +1,18 @@
+version: "3.1"
+stories:
+  - story: Complete staff search form
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: staff_search_form
+      - active_loop: staff_search_form
+      - slot_was_set:
+          - department: "IT"
+      - slot_was_set:
+          - wage: "1500"
+      - slot_was_set:
+          - experience: "3 year"
+      - active_loop: null
+      - action: utter_submit
+      - action: action_submit_staff_search
+      - action: utter_goodbye

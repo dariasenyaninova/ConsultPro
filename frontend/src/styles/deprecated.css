@@ -1,0 +1,794 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+
+/* General Layout */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0 auto;
+    padding: 0 5rem;
+}
+
+.specialists-page {
+    min-height: 100vh;
+    background-color: #f9fafb;
+    padding: 2.5rem 1rem;
+}
+
+.specialists-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* Side Menu */
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    font-weight: 500;
+    color: #5c50d2;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.side-menu li {
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background 0.2s;
+}
+
+.side-menu .active {
+    background: #d9d9f0;
+}
+
+.side-menu .danger {
+    color: #d04545;
+}
+
+/* Profile Page Layout */
+.profile-container {
+    display: flex;
+    padding-top: 80px;
+    background-color: #f5f5f5;
+    border-radius: 1rem;
+    gap: 2rem;
+}
+
+.profile-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Profile Card */
+.profile-card,
+.specialist-card-full {
+    background: white;
+    border: 1px solid #cfcfcf;
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    width: 100%;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Edit Button */
+.edit-btn {
+    background: #ff4c7c;
+    border: none;
+    border-radius: 2rem;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(255, 76, 124, 0.4);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.edit-btn:hover {
+    background: #e2436c;
+}
+
+/* Specialist Info */
+.specialist-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 2rem;
+    font-size: 0.95rem;
+}
+
+.about {
+    grid-column: span 2;
+    color: #444;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+/* Navigation Inside Header */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.25rem;
+    color: #372cc4;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav a {
+    color: #372cc4;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/* Ensure content below fixed header */
+body, .specialists-page {
+    padding-top: 80px;
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    color: #555;
+}
+
+.profile-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #222;
+}
+
+/* Rounded profile icon */
+.user-icon {
+    border: 2px solid #372cc4;
+    border-radius: 50%;
+    padding: 0.25rem;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Scrollable Cards Section */
+.card-scroll {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.specialist-card {
+    width: 12rem;
+    min-width: 12rem;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.specialist-card:hover {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.card-name {
+    font-weight: 600;
+    font-size: 1.125rem;
+    margin-top: 0.5rem;
+}
+
+.card-experience {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.card-rate {
+    color: #22c55e;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.card-image {
+    width: 6rem;
+    height: 6rem;
+    background-color: #e0e0e0;
+    border-radius: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Button: Become Specialist */
+.submit-btn {
+    align-self: flex-end;
+    background: #372cc4;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #2e23b0;
+}
+
+
+.text-block-icon-container {
+    font-family: 'Montserrat', sans-serif;
+    padding: 1rem;
+    max-width: 300px;
+}
+
+.title-with-icon {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.text-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.text-block-title {
+    font-size: 20px;
+    font-weight: 900;
+
+    margin: 0;
+    line-height: 1.2;
+}
+
+.text-block-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #222;
+    line-height: 1.5;
+}
+
+.text-block-text.italic {
+    font-style: italic;
+}
+.text-block-title.with-icon{
+    color: #ff4c7c;
+}
+.block{
+    padding-bottom: 1.5rem;
+}
+
+.text-block-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-items: start;
+}
+
+.specialist-form-wrapper {
+    font-family: 'Montserrat', sans-serif;
+    background: #f3f3f3;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.specialist-form-wrapper h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.form-box {
+    background: #ebebeb;
+    border: 1px solid #cfd1e0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    color: #333;
+}
+
+.form-input {
+    background: #f4f4f4;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.confirm-btn {
+    margin-top: 1.5rem;
+    padding: 0.6rem 2rem;
+    background: linear-gradient(90deg, #2a2fa3, #3f31d8);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+}
+
+.auth-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: sans-serif;
+}
+
+.auth-form h2 {
+    text-align: center;
+    color: #372cc4;
+}
+
+.auth-form input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+}
+
+.auth-form button {
+    padding: 0.5rem;
+    background: #372cc4;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.auth-form .toggle {
+    color: #5c50d2;
+    font-size: 0.875rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.auth-form .message {
+    font-size: 0.875rem;
+    color: #444;
+    text-align: center;
+}
+
+
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 48px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    color: #2F2FA2;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    gap: 24px;
+}
+
+.nav a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #2F2FA2;
+}
+
+.profile-icon img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    border: 2px solid #2F2FA2;
+    padding: 4px;
+}
+
+.login-link {
+    color: #2F2FA2;
+    text-decoration: none;
+    font-weight: 500;
+}
+.space-bottom {
+    padding-bottom: 3rem;
+}
+
+.auth-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f5f5f5;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    padding-top: 120px;
+}
+.auth-form {
+    background: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.auth-form h2 {
+    text-align: center;
+    color: #372cc4;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.auth-form input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.auth-form button {
+    padding: 0.75rem;
+    background: #ff4c7c; /* розовая кнопка как на других страницах */
+    color: white;
+    border: none;
+    border-radius: 999px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 76, 124, 0.4);
+}
+
+.auth-form button:hover {
+    background: #e2436c;
+}
+
+.auth-form .toggle {
+    color: #5c50d2;
+    font-size: 0.875rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.auth-form .message {
+    font-size: 0.875rem;
+    color: #444;
+    text-align: center;
+    min-height: 1.2rem;
+}
+/* Send Request Page */
+body, .specialists-page {
+    padding-top: 40px;
+}
+
+.specialist-request-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 2rem;
+}
+
+.info-grid h4 {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+}
+
+.info-grid p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #111;
+}
+
+.request-form {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.form-textarea.large {
+    max-width: 700px;
+    width: 100%;
+    min-height: 120px;
+    font-family: 'Montserrat', sans-serif;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #333;
+    resize: vertical;
+}
+
+.button-row.right {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 1rem;
+    margin-top: 0.5rem;
+}
+
+.submit-btn {
+    background: linear-gradient(90deg, #2a2fa3, #3f31d8);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 999px;
+    padding: 0.6rem 2rem;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #2a2fa3;
+}
+
+.back-btn {
+    background: #ff4c7c;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 999px;
+    padding: 0.6rem 2rem;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(255, 76, 124, 0.4);
+    transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #e2436c;
+}
+
+@media (max-width: 768px) {
+    .button-row.right {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+    }
+}
+
+/* Edit Specialist */
+
+
+/* Main Page */
+
+.body {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.space-top {
+    padding-top: 50px;
+}
+
+.text-block-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0.2rem;
+    row-gap: 2rem;
+    justify-items: stretch;
+}
+
+
+
+.text-block-icon-container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    transition: box-shadow 0.3s ease;
+}
+
+
+.text-block-icon-container:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.title-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.text-block-title.with-icon {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #ff4c7c;
+    margin: 0;
+}
+
+.text-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.text-block-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.text-block-text.italic {
+    font-style: italic;
+}
+
+h1, h2, h3 {
+    font-weight: 900;
+    color: #2F2FA2;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+
+
+
+
