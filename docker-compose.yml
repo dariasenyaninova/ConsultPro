@@ -45,12 +45,12 @@ services:
       - ./rasa:/app
     command: train
 
-  nginx:
-    image: nginx:alpine
-    container_name: nginx-inner
-    volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
-      - ./frontend/dist:/etc/nginx/html
+#  nginx:
+#    image: nginx:alpine
+#    container_name: nginx-inner
+#    volumes:
+#      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+#      - ./frontend/dist:/etc/nginx/html
 
     depends_on:
       - frontend
