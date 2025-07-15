@@ -7,8 +7,6 @@ services:
     container_name: frontend
     depends_on:
       - backend
-    networks:
-      - app-network
 
   backend:
     build:
@@ -20,8 +18,6 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:h2:file:/data/h2db/mydb
       - SPRING_H2_CONSOLE_ENABLED=true
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-    networks:
-      - app-network
     volumes:
       - h2-data:/data/h2db
 
@@ -36,8 +32,6 @@ services:
       - ./rasa:/app
       - ./rasa/models:/app/my_models
     command: run --model /app/my_models --enable-api --cors "*" --debug
-    networks:
-      - app-network
 
   action_server:
     build:
@@ -52,8 +46,6 @@ services:
     volumes:
       - ./rasa:/app
     command: train
-    networks:
-      - app-network
 
   nginx:
     image: nginx:alpine
@@ -68,12 +60,11 @@ services:
       - frontend
       - backend
       - rasa
-    networks:
-      - app-network
 
 networks:
-  app-network:
-    driver: bridge
+  default:
+    external:
+      name: shared_net
 
 volumes:
   h2-data:
