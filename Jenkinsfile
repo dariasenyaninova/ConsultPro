@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     triggers {
-        githubPush() // запускается при пуше из GitHub
+        githubPush()
     }
 
     environment {
@@ -29,10 +29,10 @@ pipeline {
 
     post {
         failure {
-            echo "❌ Ошибка в пайплайне"
+            echo "❌ Pipeline error"
         }
         success {
-            echo "✅ Проект успешно развернут"
+            echo "✅ Deployment successful"
         }
     }
 }
