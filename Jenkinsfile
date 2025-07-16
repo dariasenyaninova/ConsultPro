@@ -33,10 +33,10 @@ pipeline {
                 dir("${PROJECT_DIR}/rasa") {
                     sh """
                         echo "🧠 Training Rasa model inside Docker..."
-                        docker run --rm \
-                            -v $(pwd):/app \
-                            -u 999:999 \
-                            rasa/rasa:3.6.10 \
+                        docker run --rm \\
+                            -v \$(pwd):/app \\
+                            -u 999:999 \\
+                            rasa/rasa:3.6.10 \\
                             train --data /app/data --config /app/config.yml --domain /app/domain.yml --out /app/models
                     """
                 }
