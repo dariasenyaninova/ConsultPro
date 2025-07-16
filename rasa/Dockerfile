@@ -4,7 +4,7 @@ FROM rasa/rasa:3.6.10
 USER root
 
 # Копируем проект в /app
-COPY ./rasa /app
+COPY . /app
 
 # Создаем папку .config и даем права пользователю с uid 999
 RUN mkdir -p /app/.config && chown -R 999:999 /app/.config /app
