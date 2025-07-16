@@ -6,6 +6,7 @@ pipeline {
     }
 
     environment {
+        PROJECT_DIR = '/home/jenkins/projects/ConsultPro'
         COMPOSE_FILE = 'docker-compose.yml'
     }
 
@@ -13,16 +14,20 @@ pipeline {
         stage('Clone') {
             steps {
                 sshagent(['github-key']) {
-                    checkout scm
+                    sh """
+                        rm -rf ${PROJECT_DIR} && \
+                        git clone https://github.com/dariasenyaninova/ConsultPro.git ${PROJECT_DIR}
+                    """
                 }
             }
         }
 
-
         stage('Build & Deploy') {
             steps {
-                sh 'docker compose down || true'
-                sh 'docker compose up -d --build'
+                dir("${PROJECT_DIR}") {
+                    sh 'docker compose down || true'
+                    sh 'docker compose up -d --build'
+                }
             }
         }
     }
