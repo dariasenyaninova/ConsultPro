@@ -31,12 +31,14 @@ pipeline {
         stage('Train Rasa model') {
             steps {
                 dir("${PROJECT_DIR}/rasa") {
-                    sh '''
-                        echo "🧠 Training Rasa model..."
-                        rasa train --data data --config config.yml --domain domain.yml --out models
-                        echo "✅ Model trained"
-                        ls -la models
-                    '''
+                    sh """
+                        echo "🧠 Training Rasa model inside Docker..."
+                        docker run --rm \
+                            -v $(pwd):/app \
+                            -u 999:999 \
+                            rasa/rasa:3.6.10 \
+                            train --data /app/data --config /app/config.yml --domain /app/domain.yml --out /app/models
+                    """
                 }
             }
         }
