@@ -47,11 +47,13 @@ services:
   rasa_train:
     image: rasa/rasa:3.6.10
     user: "999:999"
+    entrypoint: ""  # <--- отключает дефолтный ENTRYPOINT (иначе всегда будет запускаться rasa)
     volumes:
       - ./rasa:/app
     command: [ "sh", "-c", "id && ls -ld /app/.config && ls -la /app/.config && rasa train" ]
     networks:
       - shared_net
+
 
 networks:
   shared_net:
