@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        PROJECT_DIR = '/home/darias/projects/ConsultPro'
+        PROJECT_DIR = '/home/darias/projects'
         COMPOSE_FILE = 'docker-compose.yml'
     }
 
