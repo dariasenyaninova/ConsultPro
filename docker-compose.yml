@@ -46,7 +46,7 @@ services:
       - shared_net
   rasa_train:
     image: rasa/rasa:3.6.10
-    user: "1000:$1000"
+    user: "999:999"
     volumes:
       - ./rasa:/app
     command: train
