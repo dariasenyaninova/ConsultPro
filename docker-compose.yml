@@ -49,8 +49,7 @@ services:
     user: "999:999"
     volumes:
       - ./rasa:/app
-    command: >
-      sh -c "id && ls -ld /app/.config && ls -la /app/.config && rasa train"
+    command: [ "sh", "-c", "id && ls -ld /app/.config && ls -la /app/.config && rasa train" ]
     networks:
       - shared_net
 
