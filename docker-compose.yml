@@ -33,8 +33,7 @@ services:
     user: "999:999"
     volumes:
       - ./rasa:/app
-      - ./rasa/models:/app/my_models
-    command: run --model /app/my_models --enable-api --cors "*" --debug
+    command: run --model /app/models --enable-api --cors "*" --debug
     networks:
       - shared_net
   action_server:

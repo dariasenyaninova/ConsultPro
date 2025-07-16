@@ -13,7 +13,7 @@ RUN mkdir -p /app/.config && chown -R 999:999 /app/.config /app
 USER 999
 
 # Обучаем модель (будет выполнено на этапе сборки образа)
-RUN rasa train --data /app/data --config /app/config.yml --domain /app/domain.yml --out /app/my_models
+RUN rasa train --data /app/data --config /app/config.yml --domain /app/domain.yml --out /app/models
 
 WORKDIR /app
 
