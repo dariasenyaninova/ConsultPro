@@ -6,42 +6,36 @@ pipeline {
     }
 
     environment {
-        // WARNING: this path must match a volume mounted into the Jenkins container
         PROJECT_DIR = '/home/jenkins/projects/ConsultPro'
         COMPOSE_FILE = 'docker-compose.yml'
     }
 
     stages {
-        stage('Debug Info') {
-            steps {
-                echo '🧪 Checking environment before cloning'
-                sh '''
-                    echo "👤 Current user:"
-                    whoami
-                    id
-
-                    echo "📁 Checking parent directory:"
-                    ls -ld /home/jenkins/projects || true
-                    ls -la /home/jenkins/projects || true
-
-                    echo "🔍 Checking PROJECT_DIR: ${PROJECT_DIR}"
-                    ls -ld "${PROJECT_DIR}" || echo "📂 PROJECT_DIR does not exist yet"
-                '''
-            }
-        }
-
         stage('Clone') {
             steps {
                 sshagent(['github-key']) {
                     sh '''
                         echo "🧹 Removing PROJECT_DIR if it exists"
-                        rm -rf "${PROJECT_DIR}"
+                        rm -rf ${PROJECT_DIR}
 
                         echo "📥 Cloning the repository"
-                        git clone https://github.com/dariasenyaninova/ConsultPro.git "${PROJECT_DIR}"
+                        git clone https://github.com/dariasenyaninova/ConsultPro.git ${PROJECT_DIR}
 
                         echo "✅ Clone completed"
-                        ls -la "${PROJECT_DIR}"
+                        ls -la ${PROJECT_DIR}
+                    '''
+                }
+            }
+        }
+
+        stage('Train Rasa model') {
+            steps {
+                dir("${PROJECT_DIR}/rasa") {
+                    sh '''
+                        echo "🧠 Training Rasa model..."
+                        rasa train --data data --config config.yml --domain domain.yml --out models
+                        echo "✅ Model trained"
+                        ls -la models
                     '''
                 }
             }
