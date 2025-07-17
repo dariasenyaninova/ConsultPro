@@ -25,7 +25,6 @@ services:
       - shared_net
   rasa_train:
     image: rasa/rasa:3.6.10
-    entrypoint: [""]
     user: "0:0"
     volumes:
       - .:/app
@@ -50,7 +49,6 @@ services:
 
   action_server:
     image: rasa/rasa-sdk:3.6.0
-    entrypoint: [""]                 # сброс встроенного entrypoint
     user: "0:0"
     volumes:
       - .:/app
