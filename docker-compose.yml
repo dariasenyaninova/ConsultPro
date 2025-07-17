@@ -9,6 +9,7 @@ services:
       - backend
     networks:
       - shared_net
+
   backend:
     build:
       context: ./backend
@@ -28,8 +29,8 @@ services:
     image: rasa/rasa:3.6.10
     user: "0:0"
     volumes:
-      - .:/app
-    working_dir: /app/rasa
+      - ./rasa:/project
+    working_dir: /project
     command: ["rasa", "train", "--data", "data", "--config", "config.yml", "--domain", "domain.yml", "--out", "models"]
     networks:
       - shared_net
@@ -38,9 +39,9 @@ services:
     image: rasa/rasa:3.6.10
     user: "0:0"
     volumes:
-      - .:/app
-    working_dir: /app
-    command: ["rasa", "run", "--model", "./rasa/models", "--enable-api", "--cors", "*", "--debug"]
+      - ./rasa:/project
+    working_dir: /project
+    command: ["rasa", "run", "--model", "models", "--enable-api", "--cors", "*", "--debug"]
     ports:
       - "5005:5005"
     networks:
@@ -52,14 +53,13 @@ services:
     image: rasa/rasa-sdk:3.6.0
     user: "0:0"
     volumes:
-      - .:/app
-    working_dir: /app/rasa
-    command: [ "python", "-m", "rasa_sdk", "--actions", "actions" ]
+      - ./rasa:/project
+    working_dir: /project
+    command: ["python", "-m", "rasa_sdk", "--actions", "actions"]
     ports:
       - "5055:5055"
     networks:
       - shared_net
-
 
 networks:
   shared_net:
