@@ -1,15 +1,13 @@
-FROM rasa/rasa:3.6.10
-
-USER root
-
-COPY . /app
-
-RUN mkdir -p /app/.config && chown -R 0:0 /app/.config /app
-
-USER 999
-
-RUN rasa train --data /app/data --config /app/config.yml --domain /app/domain.yml --out /app/models
+FROM rasa/rasa-sdk:3.6.2
 
 WORKDIR /app
 
-CMD ["run", "--model", "/app/models", "--enable-api", "--cors", "*", "--debug"]
+COPY actions/requirements.txt ./
+USER root
+
+RUN python3 -m pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
+COPY ./actions /app/actions
+
+CMD ["start","--actions","actions"]
+USER 1001
