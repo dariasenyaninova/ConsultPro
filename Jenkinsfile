@@ -2,53 +2,37 @@ pipeline {
     agent any
 
     triggers {
-        githubPush()
+        githubPush() // запускается при пуше из GitHub
     }
 
     environment {
-        PROJECT_DIR = "${WORKSPACE}"
+        COMPOSE_FILE = 'docker-compose.yml'
     }
 
     stages {
-        stage('Train Rasa model') {
+        stage('Clone') {
             steps {
-                dir("${PROJECT_DIR}/rasa") {
-                    sh '''
-                        echo "🧠 Training Rasa model..."
-                        rasa train --data data --config config.yml --domain domain.yml --out models
-                        echo "✅ Model trained"
-                        ls -la models
-                    '''
+                sshagent(['github-key']) {
+                    checkout scm
                 }
             }
         }
 
+
         stage('Build & Deploy') {
             steps {
-                dir("${PROJECT_DIR}") {
-                    sh '''
-                        echo "🧪 Verifying project directory before docker-compose"
-                        ls -la
-
-                        echo "📦 Running docker compose down"
-                        docker compose down || true
-
-                        echo "🚀 Running docker compose up --build"
-                        docker compose up -d --build
-
-                        echo "✅ Containers started successfully"
-                    '''
-                }
+                sh 'docker compose down || true'
+                sh 'docker compose up -d --build'
             }
         }
     }
 
     post {
         failure {
-            echo "❌ Pipeline failed"
+            echo "❌ Ошибка в пайплайне"
         }
         success {
-            echo "✅ Deployment successful"
+            echo "✅ Проект успешно развернут"
         }
     }
 }
