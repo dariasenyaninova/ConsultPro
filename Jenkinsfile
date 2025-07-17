@@ -11,6 +11,14 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Проверка рабочей директории') {
+            steps {
+                sh 'echo "------------Текущий путь: $(pwd)------------"'
+                sh 'ls -la'
+                sh 'echo "------------Environments:------------"'
+                sh 'env | sort'
+            }
+        }
 
         stage('Deploy with Docker Compose') {
             steps {
