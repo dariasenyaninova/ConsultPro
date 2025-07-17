@@ -46,8 +46,6 @@ services:
       - "5005:5005"
     networks:
       - shared_net
-    depends_on:
-      - rasa_train
 
   action_server:
     image: rasa/rasa-sdk:3.6.0
