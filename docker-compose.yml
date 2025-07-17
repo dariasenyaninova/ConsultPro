@@ -38,7 +38,7 @@ services:
     user: "0:0"
     container_name: rasa
     volumes:
-      - /home/darias/jenkins/jenkins_home/workspace/main-pipline/rasa:/app
+      - ${WORKSPACE}/rasa:/app
     command: ["run", "--model", "models", "--enable-api", "--cors", "*", "--debug"]
     ports:
       - "5005:5005"

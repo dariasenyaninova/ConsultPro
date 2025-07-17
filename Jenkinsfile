@@ -31,7 +31,7 @@ pipeline {
                     sh 'docker compose down || true'
 
                     echo "🚀 Building and starting containers..."
-                    sh 'docker compose up -d --build'
+                    sh 'docker compose -f docker-compose.yml up -d --build'
 
                     echo "✅ Done"
                 }
