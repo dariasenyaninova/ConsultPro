@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        PROJECT_NAME = "ConsultPro"
+        PROJECT_NAME = "consultpro"
         PROJECT_DIR = "/home/jenkins/projects/${PROJECT_NAME}"
         COMPOSE_FILE = "${PROJECT_DIR}/docker-compose.yml"
     }
