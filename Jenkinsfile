@@ -6,11 +6,22 @@ pipeline {
     }
 
     environment {
-        PROJECT_DIR = '/home/jenkins/projects/ConsultPro'
+        PROJECTS_ROOT = '/home/jenkins/projects'
+        PROJECT_NAME = 'ConsultPro'
+        PROJECT_DIR = "${PROJECTS_ROOT}/${PROJECT_NAME}"
         COMPOSE_FILE = 'docker-compose.yml'
     }
 
     stages {
+        stage('Prepare directory') {
+            steps {
+                sh '''
+                    echo "📂 Ensuring project root exists"
+                    mkdir -p ${PROJECTS_ROOT}
+                '''
+            }
+        }
+
         stage('Clone') {
             steps {
                 sshagent(['github-key']) {
@@ -18,7 +29,7 @@ pipeline {
                         echo "🧹 Removing PROJECT_DIR if it exists"
                         rm -rf ${PROJECT_DIR}
 
-                        echo "📥 Cloning the repository"
+                        echo "📥 Cloning the repository directly into ${PROJECT_DIR}"
                         git clone https://github.com/dariasenyaninova/ConsultPro.git ${PROJECT_DIR}
 
                         echo "✅ Clone completed"
