@@ -5,8 +5,6 @@ services:
     build:
       context: ./frontend
     container_name: frontend
-    depends_on:
-      - backend
     networks:
       - shared_net
 
