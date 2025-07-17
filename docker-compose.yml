@@ -26,6 +26,7 @@ services:
   rasa_train:
     image: rasa/rasa:3.6.10
     user: "0:0"
+    container_name: rasa-rasa_train
     volumes:
       - ./rasa:/project
     working_dir: /project
@@ -36,6 +37,7 @@ services:
   rasa:
     image: rasa/rasa:3.6.10
     user: "0:0"
+    container_name: rasa
     volumes:
       - ./rasa:/project
     working_dir: /project
@@ -45,17 +47,14 @@ services:
     networks:
       - shared_net
 
-#  action_server:
-#    image: rasa/rasa-sdk:3.6.0
-#    user: "0:0"
-#    volumes:
-#      - ./rasa:/project
-#    working_dir: /project
-#    command: ["python", "-m", "rasa_sdk", "--actions", "actions"]
-#    ports:
-#      - "5055:5055"
-#    networks:
-#      - shared_net
+  action_server:
+    build:
+      context: ./rasa
+    container_name: rasa-actions
+    ports:
+      - "5055:5055"
+    networks:
+      - shared_net
 
 networks:
   shared_net:
