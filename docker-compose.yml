@@ -28,8 +28,7 @@ services:
     container_name: rasa
     volumes:
       - .:/app
-      - ./rasa/models:/app/my_models
-    command: run --model /app/my_models --enable-api --cors "*" --debug
+    command: run --model /app/models --enable-api --cors "*" --debug
     networks:
       - shared_net
     depends_on:
@@ -47,7 +46,6 @@ services:
   action_server:
     build:
       context: ./rasa
-    user: "0:0"
     container_name: rasa-actions
     volumes:
       - .:/app
