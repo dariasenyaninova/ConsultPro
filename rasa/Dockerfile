@@ -4,7 +4,7 @@ USER root
 
 COPY . /app
 
-RUN mkdir -p /app/.config && chown -R 999:999 /app/.config /app
+RUN mkdir -p /app/.config && chown -R 0:0 /app/.config /app
 
 USER 999
 
