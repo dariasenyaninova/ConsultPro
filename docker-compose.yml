@@ -25,12 +25,12 @@ services:
       - shared_net
   rasa_train:
     image: rasa/rasa:3.6.10
-    entrypoint: [""]      # сбрасываем, чтобы можно было указать command
+    entrypoint: [""]
     user: "0:0"
     volumes:
       - .:/app
     working_dir: /app/rasa
-    command: train --data data --config config.yml --domain domain.yml --out models
+    command: ["rasa", "train", "--data", "data", "--config", "config.yml", "--domain", "domain.yml", "--out", "models"]
     networks:
       - shared_net
 
@@ -40,7 +40,7 @@ services:
     volumes:
       - .:/app
     working_dir: /app
-    command: run --model ./rasa/models --enable-api --cors "*" --debug
+    command: ["rasa", "run", "--model", "./rasa/models", "--enable-api", "--cors", "*", "--debug"]
     ports:
       - "5005:5005"
     networks:
@@ -50,12 +50,12 @@ services:
 
   action_server:
     image: rasa/rasa-sdk:3.6.0
-    entrypoint: [""]      # сбрасываем
+    entrypoint: [""]                 # сброс встроенного entrypoint
     user: "0:0"
     volumes:
       - .:/app
     working_dir: /app/rasa
-    command: start --actions actions
+    command: ["rasa", "run", "actions", "--actions", "actions"]
     ports:
       - "5055:5055"
     networks:
