@@ -23,33 +23,34 @@ services:
       - h2-data:/data/h2db
     networks:
       - shared_net
-  rasa:
-    image: rasa/rasa:3.6.10
-    container_name: rasa
-    user: "0:0"
-    ports:
-      - "5005:5005"
-    volumes:
-      - .:/app
-    working_dir: /app
-    command: run --model ./rasa/models --enable-api --cors "*" --debug
-    networks:
-      - shared_net
-
   rasa_train:
     image: rasa/rasa:3.6.10
-    container_name: rasa-train
+    entrypoint: [""]      # сбрасываем, чтобы можно было указать command
     user: "0:0"
     volumes:
       - .:/app
     working_dir: /app/rasa
-    command: train --out models
+    command: train --data data --config config.yml --domain domain.yml --out models
     networks:
       - shared_net
 
+  rasa:
+    image: rasa/rasa:3.6.10
+    user: "0:0"
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: run --model ./rasa/models --enable-api --cors "*" --debug
+    ports:
+      - "5005:5005"
+    networks:
+      - shared_net
+    depends_on:
+      - rasa_train
+
   action_server:
     image: rasa/rasa-sdk:3.6.0
-    container_name: rasa-actions
+    entrypoint: [""]      # сбрасываем
     user: "0:0"
     volumes:
       - .:/app
