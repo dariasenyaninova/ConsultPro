@@ -45,17 +45,17 @@ services:
     networks:
       - shared_net
 
-  action_server:
-    image: rasa/rasa-sdk:3.6.0
-    user: "0:0"
-    volumes:
-      - ./rasa:/project
-    working_dir: /project
-    command: ["python", "-m", "rasa_sdk", "--actions", "actions"]
-    ports:
-      - "5055:5055"
-    networks:
-      - shared_net
+#  action_server:
+#    image: rasa/rasa-sdk:3.6.0
+#    user: "0:0"
+#    volumes:
+#      - ./rasa:/project
+#    working_dir: /project
+#    command: ["python", "-m", "rasa_sdk", "--actions", "actions"]
+#    ports:
+#      - "5055:5055"
+#    networks:
+#      - shared_net
 
 networks:
   shared_net:
