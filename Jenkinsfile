@@ -2,9 +2,10 @@ pipeline {
     agent any
 
     environment {
-        PROJECT_NAME = "consultpro"
+        PROJECT_NAME = "ConsultPro"
         PROJECT_DIR = "/home/jenkins/projects/${PROJECT_NAME}"
-        COMPOSE_FILE = "${PROJECT_DIR}/docker-compose.yml"
+        GIT_REPO = "git@github.com:dariasenyaninova/ConsultPro.git"
+        GIT_BRANCH = "main"
     }
 
     triggers {
@@ -12,29 +13,33 @@ pipeline {
     }
 
     stages {
-        stage('Clean workspace') {
+        stage('Prepare project folder') {
             steps {
-                cleanWs()
+                sh "mkdir -p ${PROJECT_DIR}"
             }
         }
 
         stage('Clone repository') {
             steps {
                 sshagent(['github-key']) {
-                    checkout scm
+                    dir("${PROJECT_DIR}") {
+                        // клон с нужной веткой
+                        git branch: "${GIT_BRANCH}",
+                            url: "${GIT_REPO}"
+                    }
                 }
             }
         }
 
         stage('Deploy with Docker Compose') {
             steps {
-                dir("${env.PROJECT_DIR}") {
+                dir("${PROJECT_DIR}") {
                     script {
                         echo "🧹Stopping old containers (if exists)..."
-                        sh "docker compose -f ${COMPOSE_FILE} -p ${PROJECT_NAME} down || true"
+                        sh "docker compose down || true"
 
                         echo "🚀 Build and run project..."
-                        sh "docker compose -f ${COMPOSE_FILE} -p ${PROJECT_NAME} up -d --build"
+                        sh "docker compose up -d --build"
                     }
                 }
             }
