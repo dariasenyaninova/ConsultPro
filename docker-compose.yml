@@ -23,6 +23,7 @@ services:
       - h2-data:/data/h2db
     networks:
       - shared_net
+
   rasa_train:
     image: rasa/rasa:3.6.10
     user: "0:0"
@@ -53,7 +54,7 @@ services:
     volumes:
       - .:/app
     working_dir: /app/rasa
-    command: ["rasa", "run", "actions", "--actions", "actions"]
+    command: [ "python", "-m", "rasa_sdk", "--actions", "actions" ]
     ports:
       - "5055:5055"
     networks:
