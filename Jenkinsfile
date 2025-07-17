@@ -6,39 +6,10 @@ pipeline {
     }
 
     environment {
-        PROJECTS_ROOT = '/home/jenkins/projects'
-        PROJECT_NAME = 'ConsultPro'
-        PROJECT_DIR = "${PROJECTS_ROOT}/${PROJECT_NAME}"
-        COMPOSE_FILE = 'docker-compose.yml'
+        PROJECT_DIR = "${WORKSPACE}"
     }
 
     stages {
-        stage('Prepare directory') {
-            steps {
-                sh '''
-                    echo "📂 Ensuring project root exists"
-                    mkdir -p ${PROJECTS_ROOT}
-                '''
-            }
-        }
-
-        stage('Clone') {
-            steps {
-                sshagent(['github-key']) {
-                    sh '''
-                        echo "🧹 Removing PROJECT_DIR if it exists"
-                        rm -rf ${PROJECT_DIR}
-
-                        echo "📥 Cloning the repository directly into ${PROJECT_DIR}"
-                        git clone https://github.com/dariasenyaninova/ConsultPro.git ${PROJECT_DIR}
-
-                        echo "✅ Clone completed"
-                        ls -la ${PROJECT_DIR}
-                    '''
-                }
-            }
-        }
-
         stage('Train Rasa model') {
             steps {
                 dir("${PROJECT_DIR}/rasa") {
