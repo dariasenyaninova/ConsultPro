@@ -28,7 +28,7 @@ services:
     user: "0:0"
     container_name: rasa-rasa_train
     volumes:
-      - ./rasa:/project
+      - ./rasa:/project/app
     working_dir: /project
     command: ["train", "--data", "data", "--config", "config.yml", "--domain", "domain.yml", "--out", "models"]
     networks:
@@ -39,9 +39,9 @@ services:
     user: "0:0"
     container_name: rasa
     volumes:
-      - ./rasa:/project
+      - ./rasa:/project/app
     working_dir: /project
-    command: ["rasa", "run", "--model", "models", "--enable-api", "--cors", "*", "--debug"]
+    command: ["run", "--model", "models", "--enable-api", "--cors", "*", "--debug"]
     ports:
       - "5005:5005"
     networks:
