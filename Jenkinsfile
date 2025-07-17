@@ -10,6 +10,11 @@ pipeline {
     }
 
     stages {
+        stage('Clean workspace') {
+            steps {
+                cleanWs()
+            }
+        }
         stage('Clone') {
             steps {
                 sshagent(['github-key']) {
