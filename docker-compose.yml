@@ -26,29 +26,35 @@ services:
   rasa:
     image: rasa/rasa:3.6.10
     container_name: rasa
+    user: "0:0"
+    ports:
+      - "5005:5005"
     volumes:
       - .:/app
-    command: run --model /app/models --enable-api --cors "*" --debug
+    working_dir: /app
+    command: run --model ./rasa/models --enable-api --cors "*" --debug
     networks:
       - shared_net
-    depends_on:
-      - rasa_train
 
   rasa_train:
     image: rasa/rasa:3.6.10
+    container_name: rasa-train
     user: "0:0"
     volumes:
       - .:/app
-    command: train
+    working_dir: /app/rasa
+    command: train --out models
     networks:
       - shared_net
 
   action_server:
-    build:
-      context: ./rasa
+    image: rasa/rasa-sdk:3.6.0
     container_name: rasa-actions
+    user: "0:0"
     volumes:
       - .:/app
+    working_dir: /app/rasa
+    command: start --actions actions
     ports:
       - "5055:5055"
     networks:
