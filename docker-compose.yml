@@ -30,7 +30,7 @@ services:
     volumes:
       - ./rasa:/project
     working_dir: /project
-    command: ["rasa", "train", "--data", "data", "--config", "config.yml", "--domain", "domain.yml", "--out", "models"]
+    command: ["train", "--data", "data", "--config", "config.yml", "--domain", "domain.yml", "--out", "models"]
     networks:
       - shared_net
 
