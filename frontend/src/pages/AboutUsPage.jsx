@@ -13,7 +13,7 @@ export default function AboutUsPage() {
 
                 <p className="about-paragraph">
                     At <span className="highlight">ConsultPRO Connect</span>, we provide expert consulting services
-                    to help businesses grow, optimize operations, and achieve long-term success.
+                    to help businesses grow, optimize operations, and achieve long-term success!
                 </p>
 
                 <p className="about-paragraph">
