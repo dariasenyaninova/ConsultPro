@@ -38,7 +38,7 @@ services:
     user: "0:0"
     container_name: rasa
     volumes:
-      - ${WORKSPACE}/rasa:/app
+      - ./rasa:/app
     command: ["run", "--model", "models", "--enable-api", "--cors", "*", "--debug"]
     ports:
       - "5005:5005"
