@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from "react";
 import {sendMessageToBot} from "../utils/api-chat.jsx";
+import Header from "../components/Header.jsx";
 
 const ChatScreen = () => {
 
@@ -43,6 +44,7 @@ const ChatScreen = () => {
 
     return (
         <div style={styles.container}>
+            <Header />
             <div>title text</div>
             <div style={styles.chatBox}>
                 {messages.map((m, i) => (

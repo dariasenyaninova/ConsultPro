@@ -26,6 +26,7 @@ export default function Header() {
                         <a href="/specialists">Specialists</a>
                         <a href="/about">About us </a>
                         <a href="/contacts">Contacts</a>
+                        <a href="/chat-bot">Chat bot</a>
                     </nav>
                 </div>
                 {isAuthenticated ? (
