@@ -29,7 +29,7 @@ class ActionSubmitStaffSearch(Action):
 
             if response.ok:
                 try:
-                    candidates = response.json()  # <- теперь правильно ожидается список
+                    candidates = response.json()
                     if isinstance(candidates, list) and candidates:
                         message = "Here are some candidates:\n"
                         for c in candidates:

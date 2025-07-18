@@ -9,7 +9,6 @@ const ChatScreen = () => {
     ]);
     const [input, setInput] = useState("");
 
-    // Генерация UUID один раз при монтировании
     const senderIdRef = useRef("null");
 
     useEffect(() => {

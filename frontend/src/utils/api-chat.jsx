@@ -3,7 +3,7 @@ import {BOT_API_URL} from "../config";
 export const sendMessageToBot = async (message, sender ) => {
     try {
 
-        console.log("Отправка запроса:", { sender, message });
+        console.log("Send request:", { sender, message });
 
         const response = await fetch(`${BOT_API_URL}/webhooks/rest/webhook`, {
             method: "POST",
@@ -24,7 +24,7 @@ export const sendMessageToBot = async (message, sender ) => {
             const json = JSON.parse(text);
             return json;
         } catch (e) {
-            console.error("Ошибка парсинга JSON от бота:", e);
+            console.error("Error parsing JSON answer from bot:", e);
             return [{ text: "Invalid response from bot." } ];
         }
 

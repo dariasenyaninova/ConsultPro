@@ -30,9 +30,9 @@
 }
 
 .two-columns {
-    display: grid; /* переключаем на grid */
-    grid-template-columns: 1fr 1fr; /* 2 равные колонки */
-    gap: 1rem 2rem; /* вертикальный и горизонтальный отступ */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 2rem;
 }
 
 .form-box {

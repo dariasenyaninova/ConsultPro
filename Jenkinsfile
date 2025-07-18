@@ -11,21 +11,12 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Проверка рабочей директории') {
-            steps {
-                sh 'echo "------------Текущий путь: $(pwd)------------"'
-                sh 'ls -la'
-                sh 'echo "------------Environments:------------"'
-                sh 'env | sort'
-            }
-        }
 
         stage('Deploy with Docker Compose') {
             steps {
-                // Переходим в тот же каталог, где Jenkins клонил исходники
                 dir("${env.WORKSPACE}") {
                     echo "🧪 Workspace: ${env.WORKSPACE}"
-                    sh "ls -la"  // проверка
+                    sh "ls -la"
 
                     echo "🧹 Stopping old containers..."
                     sh 'docker compose down || true'

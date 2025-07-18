@@ -39,7 +39,7 @@ const ContactsPage = () => {
                     </h1>
 
                     <div style={{marginBottom: '1.5rem', color: '#2F2FA2', fontSize: '1.2rem', fontWeight: 600}}>
-                        <FaPhone style={{marginRight: '0.5rem'}}/> +372 5706 4455
+                        <FaPhone style={{marginRight: '0.5rem'}}/> +372 2233 4455
                     </div>
 
                     <div style={{marginBottom: '1.5rem', fontSize: '1.2rem', fontWeight: 500}}>

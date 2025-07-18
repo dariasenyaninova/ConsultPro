@@ -26,7 +26,7 @@ services:
   rasa_train:
     image: rasa/rasa:3.6.10
     user: "0:0"
-    container_name: rasa-rasa_train
+    container_name: rasa_train
     volumes:
       - ./rasa:/app
     command: ["train", "--data", "data", "--config", "config.yml", "--domain", "domain.yml", "--out", "models"]

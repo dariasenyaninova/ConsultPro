@@ -47,8 +47,8 @@
 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 
-    width: 500px;              /* 🔹 Фиксированная ширина */
-    margin-left: auto;         /* 🔹 Центрирование */
+    width: 500px;
+    margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
 }

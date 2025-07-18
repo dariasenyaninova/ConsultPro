@@ -22,7 +22,7 @@ export async function updateCustomer(data) {
 export async function fetchUserProfile() {
     const response = await fetchWithAuth(`${API_BASE_URL}/profile/me`);
     if (!response.ok) {
-        throw new Error(`Ошибка при загрузке профиля: ${response.status}`);
+        throw new Error(`Profile loading error: ${response.status}`);
     }
     return await response.json();
 }

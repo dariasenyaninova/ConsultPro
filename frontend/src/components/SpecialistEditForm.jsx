@@ -66,7 +66,7 @@ export default function SpecialistEditForm({ initialData }) {
                 <TextField label="About" name="about" value={formData.about} onChange={handleChange} />
             </div>
 
-            {/* Статус */}
+            {}
             {status === 'loading' && <p>Sending...</p>}
             {status === 'true' && <p style={{ color: 'green' }}>Information updated</p>}
             {status === 'false' && <p style={{ color: 'red' }}>Failed to send request. Try again.</p>}

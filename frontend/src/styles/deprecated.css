@@ -556,7 +556,7 @@ body, .specialists-page {
 
 .auth-form button {
     padding: 0.75rem;
-    background: #ff4c7c; /* розовая кнопка как на других страницах */
+    background: #ff4c7c;
     color: white;
     border: none;
     border-radius: 999px;
