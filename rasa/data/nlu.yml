@@ -30,6 +30,7 @@ nlu:
       - maximum wage [2000 euros](wage)
       - starting from [1200 euros](wage)
       - about [1800 euros](wage)
+      - about [1800 euro](wage)
       - salary range [2500 euros](wage)
       - salary range [2500 euro](wage)
       - willing to offer [3000 euros](wage)
