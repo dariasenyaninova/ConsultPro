@@ -31,10 +31,9 @@ nlu:
       - starting from [1200 euros](wage)
       - about [1800 euros](wage)
       - salary range [2500 euros](wage)
+      - salary range [2500 euro](wage)
       - willing to offer [3000 euros](wage)
-      - up to [50000 rubles](wage)
-      - [100000 rubles](wage) max
-      - [3500 USD](wage) per month
+      - willing to offer [3000 euro](wage)
 
   - intent: specify_experience
     examples: |
