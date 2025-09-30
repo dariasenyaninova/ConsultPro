@@ -1,7 +1,4 @@
 import {useNavigate} from "react-router-dom";
-import '../../styles/cards.css';
-import '../../styles/global.css';
-import '../../styles/forms.css';
 
 export default function SpecialistCard({specialist}) {
     const navigate = useNavigate();

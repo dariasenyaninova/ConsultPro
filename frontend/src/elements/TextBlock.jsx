@@ -1,4 +1,3 @@
-import '../styles/text-block.css';
 export default function TextBlock({ title, text, italic = false }) {
     return (
         <div className="text-block">

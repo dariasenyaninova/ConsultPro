@@ -22,6 +22,16 @@ nlu:
       - I need a developer for [Development](department)
       - Need someone for [Technical support](department)
       - We need a lawyer for the [Legal](department) department
+      - We need an engineer for [Engineering](department)
+      - Hiring in [R&D](department)
+      - Looking for talent in [Data](department)
+      - We are expanding our [DevOps](department) team
+      - Opening in [Security](department)
+      - Position in [Quality Assurance](department)
+      - Role in [Product](department)
+      - Vacancy in [Cloud](department)
+      - Need staff in [Infrastructure](department)
+      - Searching within [Platform](department)
 
   - intent: specify_wage
     examples: |
@@ -60,12 +70,182 @@ nlu:
   - intent: specify_profession
     examples: |
       - we need a [software engineer](profession)
-      - looking for an [accountant](profession)
-      - hiring a [sales manager](profession)
-      - searching for an [HR specialist](profession)
-      - need a [logistics coordinator](profession)
-      - seeking a [marketing specialist](profession)
-      - looking for a [developer](profession)
-      - searching for a [lawyer](profession)
-      - need a [customer support agent](profession)
-      - hiring a [QA tester](profession)
+      - hiring a [backend developer](profession)
+      - hiring a [front-end developer](profession)
+      - looking for a [full-stack developer](profession)
+      - searching for a [DevOps engineer](profession)
+      - need a [site reliability engineer](profession)
+      - seeking a [cloud architect](profession)
+      - we need a [cloud engineer](profession)
+      - looking for a [data engineer](profession)
+      - hiring a [data scientist](profession)
+      - searching for a [machine learning engineer](profession)
+      - need a [MLOps engineer](profession)
+      - hiring a [AI engineer](profession)
+      - looking for a [computer vision engineer](profession)
+      - hiring a [NLP engineer](profession)
+      - looking for a [QA automation engineer](profession)
+      - hiring a [QA engineer](profession)
+      - need a [test automation engineer](profession)
+      - seeking a [performance tester](profession)
+      - looking for a [mobile developer](profession)
+      - hiring an [Android developer](profession)
+      - hiring an [iOS developer](profession)
+      - looking for a [Flutter developer](profession)
+      - need a [React Native developer](profession)
+      - hiring a [Java developer](profession)
+      - looking for a [Python developer](profession)
+      - need a [.NET developer](profession)
+      - hiring a [Node.js developer](profession)
+      - looking for a [Go developer](profession)
+      - we need a [Kotlin developer](profession)
+      - searching for a [Swift developer](profession)
+      - hiring a [React developer](profession)
+      - need a [Angular developer](profession)
+      - hiring a [Vue.js developer](profession)
+      - looking for a [Spring Boot developer](profession)
+      - searching for a [Django developer](profession)
+      - need a [Ruby on Rails developer](profession)
+      - hiring a [PHP developer](profession)
+      - looking for a [SQL developer](profession)
+      - need a [database administrator](profession)
+      - hiring a [DBA](profession)
+      - looking for a [BI developer](profession)
+      - hiring a [Power BI developer](profession)
+      - searching for a [SAP consultant](profession)
+      - hiring a [Salesforce developer](profession)
+      - looking for a [SharePoint developer](profession)
+      - hiring a [cybersecurity analyst](profession)
+      - need a [security engineer](profession)
+      - seeking a [penetration tester](profession)
+      - looking for a [SOC analyst](profession)
+      - hiring a [network engineer](profession)
+      - need a [systems administrator](profession)
+      - hiring a [Linux administrator](profession)
+      - looking for a [Windows administrator](profession)
+      - hiring a [platform engineer](profession)
+      - need a [solutions architect](profession)
+      - looking for a [software architect](profession)
+      - hiring a [product manager](profession)
+      - need a [technical product manager](profession)
+      - hiring a [scrum master](profession)
+      - need an [agile coach](profession)
+      - looking for a [UI/UX designer](profession)
+      - hiring a [UX researcher](profession)
+      - need a [technical writer](profession)
+      - looking for a [game developer](profession)
+      - hiring a [DevRel engineer](profession)
+      - need a [hardware engineer](profession)
+      - hiring a [embedded software engineer](profession)
+      - looking for a [IoT developer](profession)
+      - hiring a [ETL developer](profession)
+      - need a [big data engineer](profession)
+      - hiring a [Kubernetes engineer](profession)
+      - looking for a [observability engineer](profession)
+      - hiring a [release manager](profession)
+      - need a [build engineer](profession)
+      - looking for a [SDET](profession)
+      - hiring a [CTO](profession)
+      - need a [CIO](profession)
+      - hiring a [IT support specialist](profession)
+      - looking for a [help desk technician](profession)
+
+  # --- Helpful resources for IT-heavy extraction ---
+  - lookup: profession
+    examples: |
+      software engineer
+      backend developer
+      front-end developer
+      full-stack developer
+      DevOps engineer
+      site reliability engineer
+      cloud architect
+      cloud engineer
+      data engineer
+      data scientist
+      machine learning engineer
+      MLOps engineer
+      AI engineer
+      computer vision engineer
+      NLP engineer
+      QA automation engineer
+      QA engineer
+      test automation engineer
+      performance tester
+      mobile developer
+      Android developer
+      iOS developer
+      Flutter developer
+      React Native developer
+      Java developer
+      Python developer
+      .NET developer
+      Node.js developer
+      Go developer
+      Kotlin developer
+      Swift developer
+      React developer
+      Angular developer
+      Vue.js developer
+      Spring Boot developer
+      Django developer
+      Ruby on Rails developer
+      PHP developer
+      SQL developer
+      database administrator
+      DBA
+      BI developer
+      Power BI developer
+      SAP consultant
+      Salesforce developer
+      SharePoint developer
+      cybersecurity analyst
+      security engineer
+      penetration tester
+      SOC analyst
+      network engineer
+      systems administrator
+      Linux administrator
+      Windows administrator
+      platform engineer
+      solutions architect
+      software architect
+      product manager
+      technical product manager
+      scrum master
+      agile coach
+      UI/UX designer
+      UX researcher
+      technical writer
+      game developer
+      DevRel engineer
+      hardware engineer
+      embedded software engineer
+      IoT developer
+      ETL developer
+      big data engineer
+      Kubernetes engineer
+      observability engineer
+      release manager
+      build engineer
+      SDET
+      CTO
+      CIO
+      IT support specialist
+      help desk technician
+
+  - synonym: front-end developer
+    examples: |
+      frontend developer
+      front end developer
+      UI developer
+
+  - synonym: site reliability engineer
+    examples: |
+      SRE
+
+  - synonym: quality assurance engineer
+    examples: |
+      QA engineer
+      QA
+      SDET

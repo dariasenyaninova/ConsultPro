@@ -1,4 +1,3 @@
-import '../styles/forms.css';
 export default function TextField({ label, name, value, onChange }) {
     return (
         <label className="form-label">

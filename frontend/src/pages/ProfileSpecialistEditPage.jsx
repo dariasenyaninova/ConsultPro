@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Header from "../components/Header";
 import SideMenu from "../components/profile/SideMenu";
 import {useLocation} from "react-router-dom";
-import SpecialistEditForm from "../components/SpecialistEditForm.jsx";
+import SpecialistEditForm from "../components/profile/SpecialistEditForm.jsx";
 
 export default function ProfileSpecialistEditPage() {
   const location = useLocation();
@@ -12,12 +12,9 @@ export default function ProfileSpecialistEditPage() {
   useEffect(() => {}, [specialistData]);
 
   return (
-    <>
-      <Header />
       <div className="profile-container">
         <SideMenu activeItem={"profile"} />
         <SpecialistEditForm initialData={specialistData}/>
       </div>
-    </>
   );
 }

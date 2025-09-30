@@ -20,8 +20,6 @@ export default function Specialists() {
     }, {});
 
     return (
-        <>
-            <Header />
             <div className="container">
                 {Object.entries(grouped).map(([department, items]) => (
                     <SpecialistCategoryBlock
@@ -31,6 +29,5 @@ export default function Specialists() {
                     />
                 ))}
             </div>
-        </>
     );
 }

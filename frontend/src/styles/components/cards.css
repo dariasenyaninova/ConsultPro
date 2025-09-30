@@ -28,32 +28,23 @@
     transition: box-shadow 0.2s ease;
     cursor: pointer;
 }
+.specialist-card:hover { box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15); }
 
-.specialist-card:hover {
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
 .profile-card,
 .specialist-card-full {
     background: white;
     border: 1px solid #cfcfcf;
     border-radius: 1rem;
     padding: 1.5rem 2rem;
-    margin-bottom: 1.5rem;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-
-    width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 700px;
+    margin: 0;
     box-sizing: border-box;
 }
-
-
 
 .profile-info {
     display: flex;
@@ -61,28 +52,23 @@
     gap: 1rem;
 }
 
-.card-name {
-    font-weight: 600;
-    font-size: 1.125rem;
-    margin-top: 0.5rem;
-}
-
-.card-experience {
-    font-size: 0.875rem;
-    color: #6b7280;
-}
-
-.card-rate {
-    color: #22c55e;
-    font-weight: 600;
-    margin-top: 0.5rem;
-}
-
+.card-name { font-weight: 600; font-size: 1.125rem; margin-top: 0.5rem; }
+.card-experience { font-size: 0.875rem; color: #6b7280; }
+.card-rate { color: #22c55e; font-weight: 600; margin-top: 0.5rem; }
 .card-image {
-    width: 6rem;
-    height: 6rem;
+    width: 6rem; height: 6rem;
     background-color: #e0e0e0;
     border-radius: 0.5rem;
     margin-bottom: 0.75rem;
 }
+.standard-width {
+    width: 700px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+}
 
+.gap{
+    gap: 2rem;
+}

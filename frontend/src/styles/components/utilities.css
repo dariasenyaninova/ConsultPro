@@ -1,0 +1,31 @@
+.space-top { padding-top: 20px; }
+.space-bottom { padding-bottom: 5rem; }
+.align-right { margin-left: auto; margin-right: 2rem; }
+.align-left { margin-right: auto; margin-left: 2rem; }
+.hidden { display: none !important; }
+.sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+.text-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.padding-right {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.align-center{
+    align-content: center;
+    text-align: center;
+}
+
+.button-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+

@@ -1,10 +1,8 @@
 import {useLocation, useNavigate} from "react-router-dom";
 import Header from "../components/Header.jsx";
 import {sendSpecialistRequest} from "../utils/api-requests.jsx";
-import {useState} from "react";
-import '../styles/global.css';
-import '../styles/cards.css';
-import '../styles/forms.css';
+import React, {useState} from "react";
+import {ButtonBack, ButtonSubmit, ButtonSubmitBig} from "../elements/Button.jsx";
 
 export default function SpecialistRequestPage() {
     const navigate = useNavigate();
@@ -26,10 +24,6 @@ export default function SpecialistRequestPage() {
     };
 
     return (
-        <>
-            <Header/>
-            <div className="space"/>
-            <div className="space"/>
             <div className="container">
                 <div className="specialist-card-full">
                     <div className="two-columns">
@@ -72,20 +66,12 @@ export default function SpecialistRequestPage() {
                             {status === 'false' && <p style={{color: 'red'}}>Failed to send request. Try again.</p>}
                         </form>
 
-                        <div >
-                            <button type="button" className="back-btn align-right" onClick={() => navigate(-1)}>
-                                Back
-                            </button>
-                            <button type="submit" form="form" className="submit-btn">
-                                Submit
-                            </button>
+                        <div className="button-row">
+                            <ButtonBack text={"Back"} onClick={() => navigate(-1)}/>
+                            <ButtonSubmit text={"Submit"} form="form" type="submit"/>
                         </div>
                     </div>
-
                 </div>
-
-
             </div>
-        </>
     );
 }

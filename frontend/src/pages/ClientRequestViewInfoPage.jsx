@@ -61,8 +61,6 @@ export default function ClientRequestViewInfoPage() {
     };
 
     return (
-        <>
-            <Header/>
             <div className="profile-container">
                 <SideMenu activeItem={"clients"}/>
                 <section className="specialist-section">
@@ -83,6 +81,5 @@ export default function ClientRequestViewInfoPage() {
                     </main>
                 </section>
             </div>
-        </>
     );
 }

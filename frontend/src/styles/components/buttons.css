@@ -1,0 +1,68 @@
+.btn {
+    font-weight: bold;
+    border-radius: 999px;
+    padding: 0.6rem 2rem;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.2s ease;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #2a2fa3, #3f31d8);
+    color: white;
+}
+.btn-primary:hover { background: #2a2fa3; }
+
+.btn-danger {
+    background: var(--accent-color);
+    color: white;
+    box-shadow: 0 4px 8px rgba(255, 76, 124, 0.4);
+}
+.btn-danger:hover { background: #e2436c; }
+
+.submit-btn {
+    background: var(--primary-color);
+    border: none;
+    border-radius: 2rem;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(37, 37, 104, 0.61);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.submit-btn:hover { background: rgba(37, 37, 104, 0.61); }
+
+.big-button{
+    min-height: 3rem;
+    min-width: 30rem;
+    font-size: 1.05rem;
+}
+
+.edit-btn {
+    background: var(--accent-color);
+    border: none;
+    border-radius: 2rem;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(255, 76, 124, 0.4);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.edit-btn:hover { background:  rgba(255, 76, 124, 0.4); }
+
+.back-btn {
+    background: var(--accent-color);
+    font-weight: bold;
+    border: none;
+    border-radius: 2rem;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    font-family: var(--font-main);
+    box-shadow: 0 4px 8px rgba(255, 76, 124, 0.4);
+    transition: background 0.3s ease;
+}
+
+.back-btn:hover { background: rgba(255, 76, 124, 0.4);}

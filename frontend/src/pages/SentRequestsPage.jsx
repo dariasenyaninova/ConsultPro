@@ -16,19 +16,16 @@ export default function SentRequestsPage() {
     }, []);
 
     return (
-        <>
-            <Header/>
-            <div className="profile-container">
-                <SideMenu activeItem={"sent"}/>
-                <section className="specialist-section">
-                    <h2>Sent requests</h2>
-                    <main className="profile-main">
-                        {data.map((s) => (
-                            <SentRequestCard key={s.id} request={s}/>
-                        ))}
-                    </main>
-                </section>
-            </div>
-        </>
-    );
+        <div className="profile-container">
+            <SideMenu activeItem={"sent"}/>
+            <main className="profile-main">
+                <h3 className="align-center">Sent requests</h3>
+                <div className="profile-block">
+                    {data.map((s) => (
+                        <SentRequestCard key={s.id} request={s}/>
+                    ))}
+                </div>
+            </main>
+        </div>
+);
 }

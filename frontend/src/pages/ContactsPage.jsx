@@ -4,8 +4,6 @@ import Header from "../components/Header.jsx";
 
 const ContactsPage = () => {
     return (
-        <>
-            <Header/>
             <div style={{
                 position: 'fixed',
                 top: 0,
@@ -52,7 +50,6 @@ const ContactsPage = () => {
                     </div>
                 </div>
             </div>
-        </>
     );
 };
 

@@ -1,17 +1,15 @@
-
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import Header from "../components/Header";
 import SideMenu from "../components/profile/SideMenu";
 import ClientProfileCard from "../components/profile/ClientProfileCard";
 import ListSpecialties from "../components/profile/ListSpecialties";
 import {useNavigate} from "react-router-dom";
 import {fetchUserProfile} from "../utils/api-customer.jsx";
-import '../styles/profile.css';
-import '../styles/buttons.css';
+import ButtonEdit, {ButtonSubmit, ButtonSubmitBig} from "../elements/Button.jsx";
 
 export default function ProfilePage() {
-  const [data, setData] = useState(null);
-  const navigate = useNavigate();
+    const [data, setData] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchUserProfile()
@@ -22,23 +20,25 @@ export default function ProfilePage() {
             .catch(console.error);
     }, []);
 
-  if (!data) return <div>Loading...</div>;
+    if (!data) return <div>Loading...</div>;
 
-  const hasSpecialties = !!data.specialties?.length;
-  return (
-      <>
-        <Header />
+    const hasSpecialties = !!data.specialties?.length;
+    return (
         <div className="profile-container">
-          <SideMenu activeItem={"profile"}/>
-          <main className="profile-main">
-            <ClientProfileCard customer={data.customerDto} />
-            {hasSpecialties ? (
-                <ListSpecialties specialties={data.specialties} />
-            ) : (
-                <button className="submit-btn" onClick={() => navigate(`/profile/specialist/edit`) }>Become specialist</button>
-            )}
-          </main>
+            <SideMenu activeItem={"profile"}/>
+            <main className="profile-main">
+                <div className="profile-block">
+                    <ClientProfileCard customer={data.customerDto}/>
+                    {hasSpecialties ? (
+                        <ListSpecialties specialties={data.specialties}/>
+                    ) : (
+                        <div className="text-right  padding-right">
+                            <ButtonSubmitBig text={"Become specialist"}
+                                             onClick={() => navigate("/profile/specialist/edit")}/>
+                        </div>
+                    )}
+                </div>
+            </main>
         </div>
-      </>
-  );
+);
 }

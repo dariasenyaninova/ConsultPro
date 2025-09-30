@@ -1,12 +1,9 @@
 import Header from "../components/Header";
-import '../styles/about-page.css';
 
 
 export default function AboutUsPage() {
 
     return (
-        <>
-            <Header/>
             <div className="about-container">
                 <h1 className="about-title">About Us</h1>
 
@@ -20,6 +17,5 @@ export default function AboutUsPage() {
                     and innovative solutions to every challenge.
                 </p>
             </div>
-        </>
     );
 }

@@ -1,16 +1,8 @@
-.space-top {
-    padding-top: 80px;
-}
-
-.space-bottom {
-    padding-bottom: 5rem;
-}
-
 .body {
     padding: 5rem 3rem;
     max-width: 1400px;
     margin: 0 auto;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-main);
     display: flex;
     flex-direction: column;
     gap: 5rem;

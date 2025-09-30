@@ -1,6 +1,5 @@
-import Button from "../../elements/Button.jsx";
+import ButtonEdit from "../../elements/Button.jsx";
 import {useNavigate} from "react-router-dom";
-import '../../styles/cards.css';
 
 export default function ClientProfileCard({customer}) {
     const navigate = useNavigate();
@@ -13,7 +12,7 @@ export default function ClientProfileCard({customer}) {
                     <p>{customer.phone}</p>
                 </div>
             </div>
-            <Button text={"Edit"} onClick={() => navigate("/profile/customer/edit", {state: customer})}/>
+            <ButtonEdit text={"Edit"} onClick={() => navigate("/profile/customer/edit", {state: customer})}/>
         </div>
     );
 }

@@ -1,4 +1,3 @@
-import '../styles/text-block.css';
 export default function TextBlockWithIcon({
                                               icon,
                                               title,

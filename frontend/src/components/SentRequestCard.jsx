@@ -1,4 +1,3 @@
-import '../styles/forms.css';
 export default function SentRequestCard({ request }) {
   // const navigate = useNavigate();
 

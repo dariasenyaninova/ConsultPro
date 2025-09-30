@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import '../styles/header.css';
 
 export default function Header() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -30,10 +29,11 @@ export default function Header() {
                     </nav>
                 </div>
                 {isAuthenticated ? (
-                    <a href="/profile/me" className="profile-icon">
+                    <a href="/profile/me" className="logo">
                         <img
                             src="/content/images/profile.png"
                             alt="Profile"
+                            className="logo-image"
                         />
                     </a>
                 ) : (

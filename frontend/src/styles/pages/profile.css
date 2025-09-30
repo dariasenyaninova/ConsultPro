@@ -1,0 +1,48 @@
+.profile-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--bg-light);
+    border-radius: 1rem;
+    gap: 2rem;
+    box-sizing: border-box;
+}
+.profile-main {
+    margin-top: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+.profile-form-wrapper {
+    width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-form-wrapper .text-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile-block {
+    width: 700px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* уже есть, но важно чтобы был border-box и без auto-маргинов справа */
+.profile-card {
+    width: 700px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ряд с кнопкой: прижимаем вправо */
+.button-row {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* если где-то висит .align-right — НЕ вешай его на wrapper/ряд с кнопкой */

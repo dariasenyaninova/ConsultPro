@@ -1,7 +1,6 @@
 import {logout} from "../../utils/auth.jsx";
 import {useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
-import '../../styles/side-menu.css';
 
 export default function SideMenu({ activeItem }) {
     const navigate = useNavigate();
@@ -28,5 +27,6 @@ export default function SideMenu({ activeItem }) {
     function logoutHandle() {
         logout()
         navigate("/")
+        window.location.reload();
     }
 }

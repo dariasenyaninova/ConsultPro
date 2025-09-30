@@ -1,5 +1,5 @@
 import {useNavigate} from "react-router-dom";
-import Button from "../elements/Button.jsx";
+import ButtonEdit from "../elements/Button.jsx";
 
 
 export default function ClientRequestCard({ request }) {
@@ -21,7 +21,7 @@ export default function ClientRequestCard({ request }) {
             <strong>Department</strong><br/>{request.specialist.department}
           </div>
         </div>
-        <Button onClick={() => navigate(`/requests/client/view`, { state: request }) } text={"View"} />
+        <ButtonEdit onClick={() => navigate(`/requests/client/view`, { state: request }) } text={"View"} />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import Header from "../components/Header";
 import SideMenu from "../components/profile/SideMenu";
-import CustomerEditForm from "../components/CustomerEditForm.jsx";
+import CustomerEditForm from "../components/profile/CustomerEditForm.jsx";
 import {useLocation} from "react-router-dom";
 
 export default function ProfileCustomerEditPage() {
@@ -10,12 +10,9 @@ export default function ProfileCustomerEditPage() {
 
     useEffect(() => {}, [initialData]);
     return (
-        <>
-            <Header/>
-            <div className="profile-container ">
-                <SideMenu activeItem={"profile"}/>
-                <CustomerEditForm initialData={initialData}/>
-            </div>
-        </>
+        <div className="profile-container">
+            <SideMenu activeItem={"profile"}/>
+            <CustomerEditForm initialData={initialData}/>
+        </div>
     );
 }

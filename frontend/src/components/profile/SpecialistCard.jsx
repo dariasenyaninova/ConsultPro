@@ -1,6 +1,5 @@
-import Button from "../../elements/Button.jsx";
+import ButtonEdit from "../../elements/Button.jsx";
 import {useNavigate} from "react-router-dom";
-import '../../styles/cards.css';
 
 export default function SpecialistCard({specialist, editable = true}) {
     const navigate = useNavigate();
@@ -28,9 +27,9 @@ export default function SpecialistCard({specialist, editable = true}) {
             </div>
             <div className="space"/>
             <br/>
-            <div>
+            <div >
                 {editable ?
-                    (<Button onClick={() => navigate(`/profile/specialist/edit`, {state: specialist})} text={"Edit"}/>)
+                    (<ButtonEdit onClick={() => navigate(`/profile/specialist/edit`, {state: specialist})} text={"Edit"}/>)
                     :
                     <></>
                 }

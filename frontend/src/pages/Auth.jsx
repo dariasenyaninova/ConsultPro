@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import Header from "../components/Header.jsx";
 import {login, register} from "../utils/auth.jsx";
-import '../styles/auth.css';
 
 export default function AuthPage() {
     const [username, setUsername] = useState("");
@@ -34,8 +33,6 @@ export default function AuthPage() {
     };
 
     return (
-        <>
-          <Header/>
             <div className="auth-container">
                 <form className="auth-form" onSubmit={handleSubmit}>
                     <h2>{isLogin ? "Login" : "Register"}</h2>
@@ -60,6 +57,5 @@ export default function AuthPage() {
                     <p className="message">{message}</p>
                 </form>
             </div>
-        </>
     );
 }
