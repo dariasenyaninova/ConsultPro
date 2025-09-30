@@ -5,10 +5,26 @@ pipeline {
         githubPush()
     }
 
+    environment {
+        DB_CREDS = credentials('pg-user-pass') // Jenkins credentials ID
+    }
+
+
     stages {
         stage('Checkout') {
             steps {
                 checkout scm
+            }
+        }
+
+        stage('Prepare ENV') {
+            steps {
+                sh '''
+                echo "POSTGRES_USER=$DB_CREDS_USR" > .env
+                echo "POSTGRES_PASSWORD=$DB_CREDS_PSW" >> .env
+                echo "POSTGRES_DB=consult_db" >> .env
+                echo "DB_PORT=5432" >> .env
+                '''
             }
         }
 

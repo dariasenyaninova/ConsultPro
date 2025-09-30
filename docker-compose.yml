@@ -16,14 +16,21 @@ services:
     container_name: backend
     expose:
       - 8080
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:h2:file:/data/h2db/mydb
-      - SPRING_H2_CONSOLE_ENABLED=true
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-    volumes:
-      - h2-data:/data/h2db
     networks:
       - shared_net
+    env_file:
+      - .env
+  postgres:
+    image: postgres:16
+    container_name: postgres-db
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
 
   rasa_train:
     image: rasa/rasa:3.6.10
@@ -61,4 +68,4 @@ networks:
     external: true
 
 volumes:
-  h2-data:
+  postgres_data:
