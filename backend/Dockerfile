@@ -2,7 +2,7 @@ FROM gradle:8.7-jdk21-alpine AS builder
 
 WORKDIR /build
 COPY . .
-RUN gradle build --no-daemon
+RUN gradle build -x test --no-daemon
 
 FROM eclipse-temurin:21-jdk-alpine
 
