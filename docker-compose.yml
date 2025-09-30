@@ -20,6 +20,8 @@ services:
       - shared_net
     env_file:
       - .env
+    depends_on:
+      - postgres
   postgres:
     image: postgres:16
     container_name: postgres-db
