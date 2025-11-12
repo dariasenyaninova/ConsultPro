@@ -233,19 +233,3 @@ nlu:
       CIO
       IT support specialist
       help desk technician
-
-  - synonym: front-end developer
-    examples: |
-      frontend developer
-      front end developer
-      UI developer
-
-  - synonym: site reliability engineer
-    examples: |
-      SRE
-
-  - synonym: quality assurance engineer
-    examples: |
-      QA engineer
-      QA
-      SDET
