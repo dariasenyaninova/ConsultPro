@@ -32,7 +32,7 @@ export default function ProfilePage() {
                     {hasSpecialties ? (
                         <ListSpecialties specialties={data.specialties}/>
                     ) : (
-                        <div className="text-right  padding-right">
+                        <div className="text-right  padding-right space-top">
                             <ButtonSubmitBig text={"Become specialist"}
                                              onClick={() => navigate("/profile/specialist/edit")}/>
                         </div>
