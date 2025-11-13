@@ -32,4 +32,5 @@ export async function register(username, password) {
 
 export function logout() {
     localStorage.removeItem(AUTH_KEY);
+    localStorage.removeItem("specialistEdit");
 }
