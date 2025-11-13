@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom";
 export default function SpecialistCard({specialist, editable = true}) {
     const navigate = useNavigate();
     return (
-        <div className="specialist-card-full">
+        <div className="specialist-card-full margin-bottom">
             <div className="two-columns">
                 <div>
                     <strong>Name</strong><br/>{specialist.name}

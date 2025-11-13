@@ -94,7 +94,7 @@ public class UserProfileService {
 
         UserData userData = byUsername.get();
         SpecialistData specialistData = new SpecialistData(request.getId(), request.getName(), request.getDepartment(),
-                request.getPhone(), request.getExperience(), request.getWage(), request.getAbout(), userData);
+                request.getPhone(), request.getExperience(), request.getAbout(), request.getWage(), userData);
         specialistRepo.save(specialistData);
         return true;
     }

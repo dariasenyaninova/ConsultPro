@@ -32,17 +32,14 @@
     box-sizing: border-box;
 }
 
-/* уже есть, но важно чтобы был border-box и без auto-маргинов справа */
 .profile-card {
     width: 700px;
     margin: 0;
     box-sizing: border-box;
 }
 
-/* ряд с кнопкой: прижимаем вправо */
 .button-row {
     display: flex;
     justify-content: flex-end;
 }
 
-/* если где-то висит .align-right — НЕ вешай его на wrapper/ряд с кнопкой */

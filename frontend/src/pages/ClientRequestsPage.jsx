@@ -22,11 +22,13 @@ export default function ClientRequestsPage() {
             <main className="profile-main">
                 <h3 className="align-center">Client requests</h3>
                 <div className="profile-block">
-                    {data.map((s) => (
+                    {data
+                        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+                        .map((s) => (
                         <ClientRequestCard key={s.id} request={s}/>
                     ))}
                 </div>
             </main>
         </div>
-);
+    );
 }

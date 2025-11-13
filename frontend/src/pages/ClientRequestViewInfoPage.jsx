@@ -6,6 +6,7 @@ import {useLocation} from "react-router-dom";
 import TextBlock from "../elements/TextBlock.jsx";
 import {updateRequestStatus} from "../utils/api-requests.jsx";
 import RequestCard from "../components/RequestCard.jsx";
+import ButtonEdit, {ButtonBack, ButtonSubmit} from "../elements/Button.jsx";
 
 export default function ClientRequestViewInfoPage() {
     const location = useLocation();
@@ -17,15 +18,15 @@ export default function ClientRequestViewInfoPage() {
         switch (currentStatus) {
             case 'OPEN':
                 return (
-                    <div>
-                        <button style={{marginRight:"30px"}} onClick={onAccept}>Accept</button>
-                        <button onClick={onDecline}>Decline</button>
+                    <div className="button-row">
+                        <ButtonSubmit onClick={onAccept} text={"Accept"}/>
+                        <ButtonBack onClick={onDecline} text={"Decline"}/>
                     </div>
                 );
             case 'ACCEPTED':
                 return (
-                    <div>
-                        <button onClick={onClose}>Close</button>
+                    <div className="button-row">
+                        <ButtonBack onClick={onClose} text={"Close"}/>
                     </div>
                 );
             case 'DECLINED':
@@ -61,25 +62,18 @@ export default function ClientRequestViewInfoPage() {
     };
 
     return (
-            <div className="profile-container">
-                <SideMenu activeItem={"clients"}/>
-                <section className="specialist-section">
-                    <h2>Requests</h2>
-                    <main className="profile-main">
+        <div className="profile-container">
+            <SideMenu activeItem={"clients"}/>
+            <main className="profile-main">
+                <h3 className="align-center">Requests</h3>
+                <div className="profile-block">
+                    <div>
                         <SpecialistCard specialist={request.specialist} editable={false}/>
-                        {/*<TextBlock title={"Status"} text={status} />*/}
-                        {/*<TextBlock title={"Data"} text={request.createdAt} />*/}
-                        {/*<TextBlock title={"Message"} text={request.message} />*/}
-                        {/*<TextBlock title={"ID"} text={request.id} />*/}
                         <RequestCard request={request}/>
-                        <div style={{
-                            alignSelf: "center",
-                            paddingBottom:"5rem"
-                        }}>
                             {renderRequestActions(status)}
-                        </div>
-                    </main>
-                </section>
-            </div>
+                    </div>
+                </div>
+            </main>
+        </div>
     );
 }

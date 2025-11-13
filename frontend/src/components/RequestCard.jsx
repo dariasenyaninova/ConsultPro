@@ -2,7 +2,7 @@ import React from "react";
 
 export default function RequestCard({ request }) {
   return (
-    <div className="specialist-card-full">
+    <div className="specialist-card-full margin-bottom">
       <div className="info-grid two-columns">
         <div>
           <strong>Status</strong><br />{request.status}
@@ -16,7 +16,6 @@ export default function RequestCard({ request }) {
         <div>
           <strong>ID</strong><br />{request.id}
         </div>
-
       </div>
     </div>
   );
